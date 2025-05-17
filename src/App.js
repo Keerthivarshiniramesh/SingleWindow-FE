@@ -23,12 +23,12 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/user-login' element={<Login auth={setAuth} />} />
-        <Route path='/dashboard' element={isAuth ? <DashBoard /> : <Navigate to='/user-login' />} />
+        <Route path='/dashboard' element={isAuth && <DashBoard />} />
         <Route path='/loanform' element={<LoanForm />} />
         <Route path='/registers' element={<Register />} />
         <Route path='/user-reg' element={<UserRegister />} />
-        <Route path='/admindash' element={isAuth ? < Dashboard /> : <Navigate to='/user-login' />} />
-        <Route path='/superdash' element={isAuth ? <SuperDashboard /> : <Navigate to='/user-login' />} />
+        <Route path='/admindash' element={isAuth && < Dashboard />} />
+        <Route path='/superdash' element={isAuth && <SuperDashboard />} />
       </Routes>
     </div>
   );
