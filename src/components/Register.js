@@ -4,7 +4,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import home_image from '../assests/singlewidow_home.jpg'
 
-const Register = () => {
+const Register = ({ auth }) => {
 
     const use = useNavigate()
     const url = process.env.REACT_APP_URL
@@ -35,15 +35,15 @@ const Register = () => {
                 .then(data => {
                     if (data.success) {
                         // Signup successful
-
+                        auth(true)
                         setName('')
                         setEmail('')
                         setContact('')
                         setPassword('')
                         if (role === 'admin')
-                            use('/admindash')
+                            use('/uset-login')
                         else
-                            use('/superdash')
+                            use('/user-login')
                     } else {
                         alert(data.message)
                     }

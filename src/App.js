@@ -25,8 +25,8 @@ function App() {
         <Route path='/user-login' element={<Login auth={setAuth} />} />
         <Route path='/dashboard' element={isAuth && <DashBoard />} />
         <Route path='/loanform' element={<LoanForm />} />
-        <Route path='/registers' element={<Register />} />
-        <Route path='/user-reg' element={<UserRegister />} />
+        <Route path='/registers' element={<Register auth={setAuth} />} />
+        <Route path='/user-reg' element={<UserRegister auth={setAuth} />} />
         <Route path='/admindash' element={isAuth && < Dashboard />} />
         <Route path='/superdash' element={isAuth && <SuperDashboard />} />
       </Routes>

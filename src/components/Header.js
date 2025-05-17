@@ -59,7 +59,7 @@ export default function Header() {
         })
             .then(res => res.json())
             .then(data => {
-                navigate('/user-login')
+                window.location.href = '/user-login'
                 console.log(data)
             })
             .catch(err => {

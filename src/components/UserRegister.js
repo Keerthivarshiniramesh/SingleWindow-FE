@@ -4,7 +4,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import home_image from '../assests/singlewidow_home.jpg'
 
-const UserRegister = () => {
+const UserRegister = ({ auth }) => {
 
     const use = useNavigate()
     const url = process.env.REACT_APP_URL
@@ -33,13 +33,13 @@ const UserRegister = () => {
                 .then(data => {
                     if (data.success) {
                         // Signup successful
-
+                        auth(true)
                         setName('')
                         setEmail('')
                         setContact('')
                         setPassword('')
 
-                        use('/dashboard')
+                        use('/user-login')
                     } else {
                         alert(data.message)
                     }

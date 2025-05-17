@@ -86,7 +86,8 @@ export default function SuperDashboard() {
             .then(data => {
                 if (data.success) {
                     alert(data.message)
-                    window.location.reload()
+                    setSee(false)
+
                 } else {
                     alert(data.message)
                 }

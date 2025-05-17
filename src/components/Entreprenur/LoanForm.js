@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import LoadingPage from '../Loading';
 import Header from '../Header';
+import { useNavigate } from 'react-router';
 
 export default function LoanForm() {
 
     const url = process.env.REACT_APP_URL
-
+    const navigate = useNavigate()
 
     const [users, setUsers] = useState(null)
 
@@ -105,6 +106,8 @@ export default function LoanForm() {
             .then(data => {
                 if (data.success) {
                     alert(data.message)
+                    navigate('/dashboard')
+
 
                 } else {
                     alert(data.message)
@@ -118,7 +121,7 @@ export default function LoanForm() {
 
     return (
         <section className="min-h-screen bg-gradient-to-br from-red-300 via-blue-200 to-orange-200 py-10">
-       
+
             <div className="container mx-auto px-4">
                 <div className="flex justify-center items-center min-h-screen">
                     <div className="w-full max-w-6xl bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row">
