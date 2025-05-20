@@ -41,7 +41,9 @@ const Register = ({ auth }) => {
                         setContact('')
                         setPassword('')
                         if (role === 'admin')
-                            use('/uset-login')
+                            use('/user-login')
+                        else if (role === '')
+                            use('/user-login')
                         else
                             use('/user-login')
                     } else {

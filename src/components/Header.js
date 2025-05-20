@@ -79,7 +79,7 @@ export default function Header() {
 
                 <div className="flex items-center gap-2 cursor-pointer">
                     <i className="bi bi-person-circle text-cyan-600 text-xl"></i>
-                    <span className="font-bold">{loginName}</span>
+                    {/* <span className="font-bold">{loginName}</span> */}
                     <div
                         className="flex items-center gap-2 cursor-pointer"
                         onClick={Logout}
