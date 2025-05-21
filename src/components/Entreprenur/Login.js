@@ -88,10 +88,7 @@ export default function Login({ auth }) {
                                     alert(authData.message);
                                 }
                             });
-                    }
-
-
-                    else {
+                    } else {
                         use('/dashboard');
                     }
                 } else {
